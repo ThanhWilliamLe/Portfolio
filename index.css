@@ -4,7 +4,7 @@ html {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  background: #ededda;
+  background: #f2f2e9;
   display: flex;
   align-content: center;
   flex-direction: column; }
@@ -12,7 +12,9 @@ html {
 body {
   margin: auto;
   width: calc(100% - 40px);
-  height: calc(100% - 40px); }
+  height: calc(100% - 40px);
+  display: flex;
+  flex-direction: column; }
 
 #top {
   position: relative;
@@ -21,9 +23,9 @@ body {
   display: flex;
   align-content: center;
   flex-direction: column; }
-  #top .small-top {
+  #top.small {
     height: 10%;
-    transition: height 1s; }
+    transition: height 350ms; }
 
 #top-bg {
   position: absolute;
@@ -33,7 +35,7 @@ body {
   background-size: cover;
   opacity: 0.5;
   filter: blur(3px);
-  animation: 0.4s ease both fade-in; }
+  animation: 400ms ease both fade-in; }
 @keyframes fade-in {
   0% {
     opacity: 0; }
@@ -47,8 +49,8 @@ body {
   border-radius: 50%;
   border: 2px solid #ededda;
   z-index: 1;
-  animation: 0.4s ease both scale-in;
-  animation-delay: 0.3s; }
+  animation: 400ms ease both scale-in;
+  animation-delay: 300ms; }
 @keyframes scale-in {
   0% {
     transform: scale(0); }
@@ -57,32 +59,78 @@ body {
 #greetings {
   display: flex;
   flex-direction: column;
-  margin: 20px 0; }
+  margin: 20px 0;
+  overflow: hidden; }
+  #greetings.small {
+    margin: 5px 0;
+    height: 0;
+    transition: height 300ms, margin 300ms; }
   #greetings #title {
     text-align: center;
     font-family: "Roboto Slab", serif;
     font-size: 4rem;
     font-weight: normal;
-    animation: 0.5s ease both slide-in;
-    animation-delay: 0.6s; }
+    animation: 500ms ease both slide-in;
+    animation-delay: 600ms; }
     #greetings #title marked {
       background-color: #4c80ba;
       color: white; }
   #greetings #sub-title {
     text-align: center;
     font-family: "Roboto Light", sans-serif;
-    font-size: 1.25em;
-    animation: 0.5s ease both slide-in;
-    animation-delay: 0.9s; }
-  #greetings .hidden {
-    transition: height 1s;
-    height: 0px; }
+    font-size: 1.25rem;
+    animation: 500ms ease both slide-in;
+    animation-delay: 900ms; }
 @keyframes slide-in {
   0% {
     transform: translateX(-50px);
     opacity: 0; }
   100% {
-    transform: translateX(0%);
+    transform: translateX(0);
     opacity: 1; } }
+#tabs {
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
+  #tabs .tab-button {
+    height: 100%;
+    min-width: 250px;
+    flex-grow: 1;
+    display: flex;
+    opacity: 0.5; }
+    #tabs .tab-button:nth-child(1) {
+      animation: 500ms ease backwards slide-up;
+      animation-delay: 1350ms; }
+    #tabs .tab-button:nth-child(2) {
+      animation: 500ms ease backwards slide-up;
+      animation-delay: 1500ms; }
+    #tabs .tab-button:nth-child(3) {
+      animation: 500ms ease backwards slide-up;
+      animation-delay: 1650ms; }
+    #tabs .tab-button:nth-child(4) {
+      animation: 500ms ease backwards slide-up;
+      animation-delay: 1800ms; }
+@keyframes slide-up {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 0.5; } }
+    #tabs .tab-button:hover {
+      z-index: 1;
+      background-color: #a1daaaff;
+      transform: translateY(-5px);
+      transition: background-color 300ms, transform 300ms; }
+    #tabs .tab-button.current {
+      background-color: #a1daaaff;
+      transform: translateY(0);
+      opacity: 1;
+      transition: background-color 300ms, transform 300ms, opacity 300ms; }
+    #tabs .tab-button h {
+      margin: auto;
+      font-family: "Roboto Slab", serif;
+      font-size: 1.25rem; }
 
 /*# sourceMappingURL=index.css.map */
