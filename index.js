@@ -1,7 +1,7 @@
 function onTabButtonClicked(tabBtn)
 {
     tabBtn = $(tabBtn);
-    
+
     $("#top, #greetings").toggleClass("small", true);
     tabBtn.siblings().removeClass("current");
     tabBtn.toggleClass("current", true);
@@ -9,10 +9,7 @@ function onTabButtonClicked(tabBtn)
     var tab = tabBtn.data().tab;
     console.log(tab);
 
-    readData(tab, function(data)
-    {
-
-    });
+    loadTab(tab);
 }
 
 
@@ -23,4 +20,37 @@ function readData(name, callback)
         console.log(data);
         callback(data);
     });
+}
+
+function loadTab(name)
+{
+    closeCurrentTab();
+    readData(name, function (data)
+    {
+        displayTab(name, data);
+    });
+}
+
+function closeCurrentTab()
+{
+    var currentTab = $("#tab-display").children(".tab.current");
+    currentTab.fadeTo("fast", 0, function ()
+    {
+        currentTab.remove();
+    });
+}
+
+function displayTab(name, data)
+{
+    var className = "tab-template-" + name;
+    var template = $("#" + className);
+    template.removeClass(className);
+
+    var displayer = $("#tab-display");
+    displayer.append(template);
+    
+}
+
+function displayResume(data, template)
+{
 }
