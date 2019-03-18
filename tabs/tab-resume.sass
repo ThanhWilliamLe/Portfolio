@@ -1,0 +1,32 @@
+.tab-resume
+  display: inline-grid
+  grid-gap: 20px
+  align-content: stretch
+  justify-content: stretch
+  grid-template-columns: repeat(5, 1fr)
+
+  .group
+    border: 3px solid #9ab3d4
+    border-radius: 2rem
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    line-break: anywhere
+
+    top
+      padding: 4px 8px 8px 4px
+      background-color: transparentize(#4c80ba, 0.5)
+      font-family: "Roboto Slab", serif
+      font-weight: bold
+      font-size: 1.5rem
+      text-align: center
+      color: #fafff4
+
+
+    content
+      flex-grow: 1
+      padding: 0.65rem
+      font-family: "Roboto Light", sans-serif
+      font-weight: 300
+      white-space: pre-line
+

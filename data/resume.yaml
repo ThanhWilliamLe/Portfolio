@@ -1,18 +1,75 @@
 ---
 
-basic-info:
-  full-name: Lê Tiến Thành
-  short-name: Thành
+basicInfo:
+  fullName: Lê Tiến Thành
+  shortName: Thành
   nickname: William
   codename: TWLE
   dob: 1996-11-24
   gender: male
 
 contacts:
-  phone: +84833958758
+  phone: '+84833958758'
   address: 51 ngõ 222 Lê Duẩn, Khâm Thiên, Đống Đa, Hà Nội
-  address-en: 51 lane 222 Le Duan street, Dong Da district, Hanoi, Vietnam
+  addressEN: 51 lane 222 Le Duan street, Dong Da district, Hanoi, Vietnam
+  addressShort: Hanoi, Vietnam
   email: thanhletien.william@gmail.com
   linkedin: thanhwilliamle
   facebook: thanhwilliamle
   instagram: b110.william
+
+education:
+  - type: highschool
+    institution: Foreign Language Specialized School
+    location: Hanoi, Vietnam
+    major: English
+    from: 2011-09-01
+    to: 2014-06-01
+    gpa: 8.8
+    gpaOver: 10
+  - type: university
+    institution: Foreign Trade University
+    location: Hanoi, Vietnam
+    major: International Business Administration
+    from: 2014-09-01
+    to: 2018-07-01
+    gpa: 3.74
+    gpaOver: 4
+
+work:
+  - company: Finsify PTE. LTD.
+    location: Hanoi, Vietnam
+    position: Business Intelligence Analyst
+    from: 2017-09-01
+    to: 2018-06-01
+    skills: [Data analysis, PostgreSQL, Mongo, Python, HTML, CSS, Javascript]
+    description:
+      - Analyze customer behavioural data and conduct researches to propose solutions to business problems.
+      - Query from databases and analyze data to provide insights for business operations.
+      - Develop dashboards and web tools.
+  - company: No Power-up studio
+    location: Hanoi, Vietnam
+    position: Unity developer
+    from: 2018-06-01
+    to: now
+    skills: [Unity, 'C#', Python, Game Design]
+    description:
+      - Develop mobile games using Unity & C#
+      - Experienced in: Particle system, Shader, Procedural generation, Animation, Ragdoll physics, Tiling, Optimizations,...
+
+skills:
+  - Unity: 100
+  - Programming (C#, Java, Python): 95
+  - Querying (PostgreSQL, MySQL, Mongo): 80
+  - Designing (Ae, Ps, Lr, Au): 70
+  - Web (HTML, CSS, Javascript, PHP): 60
+
+otherSkills:
+  - Logic & numeric reasoning: 80
+  - Teamwork & dedication: 80
+  - Creativity: 80
+  - English: 80
+
+interest: [Technology, Graphics & Videos, Music & Dancing, Gaming & Programming]
+
+traits: [Quick learner, Hardworking, Open-minded, Creative]

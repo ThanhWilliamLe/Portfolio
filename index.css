@@ -93,6 +93,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly; }
+  #tabs.small {
+    height: 50px;
+    transition: height 300ms; }
   #tabs .tab-button {
     height: 100%;
     min-width: 250px;
@@ -134,10 +137,48 @@ body {
       font-size: 1.25rem; }
 
 #tab-display {
-  flex-grow: 1; }
+  flex-grow: 1;
+  position: relative; }
   #tab-display .tab {
-    height: 100%;
-    width: 100%;
-    background-color: #4c80ba; }
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  #tab-display .current {
+    z-index: 1;
+    animation: 300ms ease both fade-in-full; }
+@keyframes fade-in-full {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+  #tab-display .tab-resume {
+    display: inline-grid;
+    grid-gap: 20px;
+    align-content: stretch;
+    justify-content: stretch;
+    grid-template-columns: repeat(5, 1fr); }
+    #tab-display .tab-resume .group {
+      border: 3px solid #9ab3d4;
+      border-radius: 2rem;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      line-break: anywhere; }
+      #tab-display .tab-resume .group top {
+        padding: 4px 8px 8px 4px;
+        background-color: rgba(76, 128, 186, 0.5);
+        font-family: "Roboto Slab", serif;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-align: center;
+        color: #fafff4; }
+      #tab-display .tab-resume .group content {
+        flex-grow: 1;
+        padding: 0.65rem;
+        font-family: "Roboto Light", sans-serif;
+        font-weight: 300;
+        white-space: pre-line; }
 
 /*# sourceMappingURL=index.css.map */

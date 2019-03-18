@@ -2,13 +2,11 @@ function onTabButtonClicked(tabBtn)
 {
     tabBtn = $(tabBtn);
 
-    $("#top, #greetings").toggleClass("small", true);
+    $("#top, #greetings, #tabs").toggleClass("small", true);
     tabBtn.siblings().removeClass("current");
     tabBtn.toggleClass("current", true);
 
     var tab = tabBtn.data().tab;
-    console.log(tab);
-
     loadTab(tab);
 }
 
@@ -17,7 +15,6 @@ function readData(name, callback)
 {
     YAML.load('data/' + name + '.yaml', function (data)
     {
-        console.log(data);
         callback(data);
     });
 }
@@ -42,15 +39,25 @@ function closeCurrentTab()
 
 function displayTab(name, data)
 {
-    var className = "tab-template-" + name;
-    var template = $("#" + className);
-    template.removeClass(className);
-
     var displayer = $("#tab-display");
-    displayer.append(template);
-    
+    displayer.hide();
+    displayer.load("tabs/tab-" + name + ".html .tab", function (r, s, jq)
+    {
+        displayer.show();
+        var newTab = $(displayer).children(".tab-" + name).not(".current");
+        newTab.addClass("current");
+
+        if (name === "resume") fillResume(newTab, data);
+    });
 }
 
-function displayResume(data, template)
+
+function fillResume(resumeTab, data)
 {
+    var html = "";
+
+    var info = $(".group-info").children("content");
+    html = info.html();
+    html = html.replace("{fullName}", data.basicInfo.fullName);
+    info.html(html);
 }
