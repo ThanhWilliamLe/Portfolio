@@ -1,3 +1,14 @@
+var shortMonths = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+String.prototype.format = function ()
+{
+    a = this;
+    for (k in arguments)
+    {
+        a = a.replace("{" + k + "}", arguments[k])
+    }
+    return a
+}
+
 function onTabButtonClicked(tabBtn)
 {
     tabBtn = $(tabBtn);
@@ -51,7 +62,6 @@ function displayTab(name, data)
     });
 }
 
-
 function fillResume(resumeTab, data)
 {
     var html = "";
@@ -59,5 +69,36 @@ function fillResume(resumeTab, data)
     var info = $(".group-info").children("content");
     html = info.html();
     html = html.replace("{fullName}", data.basicInfo.fullName);
+    html = html.replace("{dob}", new Date(data.basicInfo.dob).getFullYear());
+    html = html.replace("{gender}", data.basicInfo.gender);
+    html = html.replace("{phone}", data.contacts.phone);
+    html = html.replace("{address}", data.contacts.addressShort);
+    html = html.replace("{facebook}", "<a href='" + data.contacts.facebook + "' style='display: contents'>" + "Facebook" + "</a>");
+    html = html.replace("{linkedin}", "<a href='" + data.contacts.linkedin + "' style='display: contents'>" + "LinkedIn" + "</a>");
     info.html(html);
+
+
+    var work = $(".group-work").children("content");
+    var workItem = work.find(".work-item");
+    var workDatas = data.work.sort(function (a, b)
+    {
+        return new Date(b.from) - new Date(a.from);
+    });
+    workDatas.forEach(function (e, i)
+    {
+        var wic = workItem.clone();
+        console.log(e);
+        wic.find(".position").html(e.position);
+        wic.find(".company").html(e.company);
+
+        var workFrom = new Date(e.from);
+        var workTo = new Date(e.to);
+        var timeStr = "{0} {1} - ".format(shortMonths[workFrom.getMonth()], workFrom.getFullYear());
+        if (e.to === "now") timeStr += "NOW";
+        else timeStr += "{0} {1}".format(shortMonths[workTo.getMonth()], workTo.getFullYear());
+        wic.find(".time").html(timeStr);
+        work.append(wic);
+    });
+    workItem.remove();
 }
+

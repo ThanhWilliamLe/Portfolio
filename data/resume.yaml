@@ -6,7 +6,7 @@ basicInfo:
   nickname: William
   codename: TWLE
   dob: 1996-11-24
-  gender: male
+  gender: Male
 
 contacts:
   phone: '+84833958758'
@@ -14,9 +14,9 @@ contacts:
   addressEN: 51 lane 222 Le Duan street, Dong Da district, Hanoi, Vietnam
   addressShort: Hanoi, Vietnam
   email: thanhletien.william@gmail.com
-  linkedin: thanhwilliamle
-  facebook: thanhwilliamle
-  instagram: b110.william
+  linkedin: https://linkedin.com/in/thanhwilliamle
+  facebook: https://fb.me/thanhwilliamle
+  instagram: https://instagram.com/b110.william
 
 education:
   - type: highschool

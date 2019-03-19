@@ -179,6 +179,28 @@ body {
         padding: 0.65rem;
         font-family: "Roboto Light", sans-serif;
         font-weight: 300;
+        white-space: pre-line;
+        display: flex;
+        flex-direction: column; }
+    #tab-display .tab-resume .group-work .work-item {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      margin-bottom: 10px; }
+      #tab-display .tab-resume .group-work .work-item p {
+        margin: 0;
+        padding: 3px; }
+      #tab-display .tab-resume .group-work .work-item .position {
+        font-weight: 700;
+        font-size: 1.15rem;
+        text-transform: uppercase;
+        background-color: #7cca98;
+        color: #ffffff; }
+      #tab-display .tab-resume .group-work .work-item .company, #tab-display .tab-resume .group-work .work-item .time {
+        font-weight: 300; }
+      #tab-display .tab-resume .group-work .work-item .desc {
+        font-weight: 300;
+        font-style: italic;
         white-space: pre-line; }
 
 /*# sourceMappingURL=index.css.map */
