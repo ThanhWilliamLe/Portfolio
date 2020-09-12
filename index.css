@@ -1,0 +1,29 @@
+﻿:root
+{
+    --main-text-color: #1b1b1b;
+    --sub-text-color: #3e3e3e;
+    --main-bg-color: #ffffff;
+    --main-bg-accent: #2549ac;
+}
+
+body 
+{
+    margin: 0;
+    padding: 0;
+}
+
+.header
+{
+    width: auto;
+    height: 350px;
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+}
+
+.header .top-accent
+{
+    width: auto;
+    height: 150px;
+    background-color: var(--main-bg-accent);
+    box-shadow: inset 0px -10px 10px #0003;
+}
