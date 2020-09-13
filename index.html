@@ -5,10 +5,73 @@
     <meta charset="utf-8" />
     <title>Thành Lê's portfolio</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="header">
         <div class="top-accent"></div>
+        <div class="info">
+            <div class="info-child left">
+                <h1 id="_fullname"></h1>
+                <h2 id="_title"></h2>
+            </div>
+            <div class="info-avatar">
+                <div class="avatar-container">
+                    <img class="avatar" id="_avatar" loading=lazy />
+                </div>
+            </div>
+            <div class="info-child right">
+                <div id="_contacts">
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="projects" id="_projects">
+
+        <!-- This is just a prefab -->
+        <div class="project-group" id="_projectGroupPrefab">
+
+            <h1 class="name">??? projects</h1>
+            <div class="separator"></div>
+
+            <div class="project-grid">
+                <div class="project" id="_projectPrefab">
+
+                    <!-- Info -->
+                    <div style="display: flex">
+                        <img class="icon" loading="lazy" />
+                        <div style="width: 10px"></div>
+                        <div>
+                            <h1 class="title">Title</h1>
+                            <h2 class="ratings">{0} <i class="fa fa-star"></i> &nbsp;&nbsp; {1}+ <i class="fa fa-user"></i></h2>
+                            <h2 class="downloads">{0}+ Downloads</h2>
+                        </div>
+                    </div>
+
+                    <!-- Screenshots -->
+                    <div class="screenshots">
+                        <img class="screenshot" loading="lazy" />
+                        <img class="screenshot" loading="lazy" />
+                        <img class="screenshot" loading="lazy" />
+                    </div>
+
+                    <!-- Stores -->
+                    <div class="links">
+                        <a class="appstore" target="_blank"><img src="imgs/apple-store-badge.png" loading="lazy" /></a>
+                        <a class="googleplay" target="_blank"><img src="imgs/google-play-badge.png" loading="lazy" /></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+
 </body>
 </html>
