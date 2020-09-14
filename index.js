@@ -122,6 +122,38 @@
     ]
 }
 
+var cookieKey_Theme = 'theme';
+var theme_dark = 'dark';
+
+function applyTheme() {
+    var themeRoot = $(":root")[0];
+
+    var classes = themeRoot.classList;
+    classes.forEach(cl => {
+        if (cl && cl.includes("theme")) themeRoot.classList.remove(cl);
+    });
+
+    var theme = getTheme();
+    if (theme) themeRoot.classList.add('theme-' + theme);
+}
+
+function toggleTheme() {
+
+    var theme = getTheme();
+
+    if (theme) setTheme('');
+    else setTheme(theme_dark);
+
+    applyTheme();
+}
+
+function getTheme() {
+    return localStorage['theme'];
+}
+function setTheme(theme) {
+    localStorage['theme'] = theme;
+}
+
 function applyData() {
     $('#_avatar').attr("src", data.basic.avatar);
     $('#_fullname').html(data.basic.fullname);
@@ -201,17 +233,29 @@ function applyData() {
     projectPrefab.attr("style", "display:none");
 }
 
-applyData();
-
-$(document).ready(function () {
+function applyAnimation() {
 
     $('.project').waypoint(function () {
 
-        $(this.element).css({
+        var projDom = $(this.element);
+
+        projDom.css({
             animation: "animate-project 0.5s",
+            "animation-fill-mode": "both",
+        });
+
+        var ssDoms = projDom.find('.screenshot');
+        ssDoms.css({
+            animation: "animate-screenshot 0.4s",
             "animation-fill-mode": "both",
         });
 
     }, { offset: 'bottom-in-view' });
 
-});
+}
+
+applyTheme();
+
+applyData();
+
+$(document).ready(applyAnimation);

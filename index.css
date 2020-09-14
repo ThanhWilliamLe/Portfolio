@@ -1,21 +1,64 @@
 ﻿:root {
-    --main-text-color: #1b1b1b;
-    --sub-text-color: #3e3e3e;
+    --main-bg-color: #fff;
+    --accent-bg-color: #2379cc;
+    /**/
+    --container1-bg-color: #fff;
+    --container2-bg-color: #fff;
+    /**/
+    --main-text-color: #222;
+    --sub-text-color: #333;
+    --accent-text-color: #4382be;
     --gold-text-color: #ffcc24;
-    --main-bg-color: #ffffff;
-    --main-bg-accent: #2549ac;
-    --shadow-color-light: #0003;
+    /**/
     --shadow-color: #0008;
+    --shadow-color-light: #0003;
+    /**/
     --font: 'Roboto', sans-serif;
 }
+
+    :root.theme-dark {
+        --main-text-color: #eee;
+        --main-bg-color: #222;
+        /**/
+        --container1-bg-color: #333;
+        --container2-bg-color: #333;
+    }
 
 body {
     margin: 0;
     padding: 0;
-    color: var(--main-text-color);
     background-color: var(--main-bg-color);
+}
+
+h1, h2, h3, button {
+    color: var(--main-text-color);
     font-family: var(--font);
 }
+
+button {
+    font-size: large;
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+    background-color: var(--main-bg-color);
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    opacity: 0.8;
+    box-shadow: var(--main-text-color) 0 0 2px inset;
+}
+
+    .theme-toggle:hover {
+        box-shadow: var(--main-text-color) 0 0 5px inset;
+    }
+
+    .theme-toggle:focus {
+        box-shadow: var(--main-text-color) 0 0 8px inset;
+        outline: none !important;
+    }
 
 .header {
     width: auto;
@@ -26,7 +69,7 @@ body {
         height: 120px;
         position: absolute;
         z-index: -1;
-        background-color: var(--main-bg-accent);
+        background-color: var(--accent-bg-color);
         box-shadow: inset 0px -10px 10px var(--shadow-color-light);
     }
 
@@ -49,7 +92,7 @@ body {
             padding: 10px;
             box-shadow: 0 0 10px var(--shadow-color);
             bottom: 0;
-            background-color: var(--main-bg-color);
+            background-color: var(--container1-bg-color);
         }
 
         .header .info .avatar {
@@ -105,14 +148,14 @@ body {
 
         .projects .project-group .name {
             font-weight: 300;
-            color: var(--main-bg-accent);
+            color: var(--accent-text-color);
             margin: 0;
         }
 
         .projects .project-group .separator {
             width: auto;
             height: 1px;
-            background-color: var(--main-bg-accent);
+            background-color: var(--accent-text-color);
         }
 
         .projects .project-group .project-grid {
@@ -126,6 +169,7 @@ body {
     width: 680px;
     height: 540px;
     border-radius: 10px;
+    background-color: var(--container2-bg-color);
     box-shadow: 0 0 10px var(--shadow-color-light);
     margin: 40px 30px;
     padding: 10px;
@@ -222,9 +266,19 @@ body {
     }
 }
 
+@keyframes animate-screenshot {
+    from {
+        transform: scale(0.6);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
 .footer {
     width: auto;
     height: 100px;
-    background-color: var(--main-bg-accent);
+    background-color: var(--accent-bg-color);
     box-shadow: inset 0px 10px 10px var(--shadow-color-light);
 }
