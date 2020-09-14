@@ -2,7 +2,7 @@
     basic: {
         fullname: "Lê Tiến Thành",
         title: "Unity game developer",
-        avatar: "https://scontent.fhan2-5.fna.fbcdn.net/v/t1.0-9/64592311_2385802534818985_4771011249066475520_o.jpg?_nc_cat=109&_nc_sid=174925&_nc_ohc=yuhIbvhTllEAX-WL7en&_nc_ht=scontent.fhan2-5.fna&oh=2700afb833aa54b7a7fea04ead31537e&oe=5F83261E"
+        avatar: "imgs/avatar.jpg"
     },
 
     contacts: {
