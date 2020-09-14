@@ -47,16 +47,17 @@ button {
     position: fixed;
     bottom: 15px;
     right: 15px;
-    opacity: 0.8;
-    box-shadow: var(--main-text-color) 0 0 2px inset;
+    opacity: 0.3;
+    box-shadow: var(--main-text-color) 0 0 2px;
+    cursor: pointer;
 }
 
     .theme-toggle:hover {
-        box-shadow: var(--main-text-color) 0 0 5px inset;
+        opacity: 1;
+        box-shadow: var(--main-text-color) 0 0 5px;
     }
 
     .theme-toggle:focus {
-        box-shadow: var(--main-text-color) 0 0 8px inset;
         outline: none !important;
     }
 
