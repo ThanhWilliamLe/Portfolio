@@ -122,7 +122,6 @@
     ]
 }
 
-var cookieKey_Theme = 'theme';
 var theme_dark = 'dark';
 
 function applyTheme() {
