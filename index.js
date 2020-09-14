@@ -24,30 +24,97 @@
             projects: [
                 {
                     title: "Flip Jump Stack",
+                    folder: "flip-jump-stack",
                     stars: 4.3,
                     rates: 35000,
                     downloads: 10000000,
-                    icon: "https://lh3.googleusercontent.com/pyhwXkjwB_09v3AAFBg2SaNRsXS5FnKzzv34u8-SO2qEEGSbrXeQynve3HrTrzJwl1o-=s180-rw",
-                    screenshots: [
-                        "https://lh3.googleusercontent.com/N6YSaFn10W1K-Kbv4kNmDbZLLxWLUZMxko7xDoYD3txgT7ZPzkoEBiebWIgCG6vwBaE=w720-h310-rw",
-                        "https://lh3.googleusercontent.com/HDH0AOI3KHDh68BM8mCiBdTKOL_rb7ITNzRRbi9VG_gV6LptwprC4xxI7mNayt7ImZs=w720-h310-rw",
-                        "https://lh3.googleusercontent.com/iQQ7Sk3js9W-YefDWLZOrrW0nHOH0sd3oS9LefQZtYVmD__q2lRGULyYa0gZ3gA1_Q=w720-h310-rw"
-                    ],
                     appstore: "https://apps.apple.com/us/app/flip-jump-stack/id1481329682",
                     googleplay: "https://play.google.com/store/apps/details?id=com.crazylabs.flip.jump.stack&hl=en_US",
                 },
                 {
                     title: "Art Cleaning",
+                    folder: "art-cleaning",
                     stars: 0,
                     rates: 0,
                     downloads: 0,
-                    icon: "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/6c/27/f3/6c27f3e3-887f-0ddd-9895-ba33275e03e4/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-85-220.png/230x0w.png",
-                    screenshots: [
-                        "https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/a5/1a/43/a51a431d-2c0e-ccfb-cca5-022ac9073fc9/pr_source.png/230x0w.png",
-                        "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/b1/2a/f7/b12af71c-5cff-0903-8741-483ed6a84a40/pr_source.png/230x0w.png",
-                        "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/4b/a1/0f/4ba10f47-a912-f973-ada4-90e177170340/pr_source.png/230x0w.png"
-                    ],
                     appstore: "https://apps.apple.com/us/app/art-cleaning/id1500025435",
+                    googleplay: "",
+                }
+            ]
+        },
+        {
+            name: "Company",
+            projects: [
+                {
+                    title: "Idle Success",
+                    folder: "idle-success",
+                    stars: 4.8,
+                    rates: 40000,
+                    downloads: 1000000,
+                    appstore: "https://apps.apple.com/us/app/idle-success/id1512112169",
+                    googleplay: "https://play.google.com/store/apps/details?id=com.idle.success&hl=en_US",
+                },
+                {
+                    title: "Doctor Hero",
+                    folder: "doctor-hero",
+                    stars: 4,
+                    rates: 10000,
+                    downloads: 1000000,
+                    appstore: "",
+                    googleplay: "https://play.google.com/store/apps/details?id=com.doctor.hero&hl=en_US",
+                },
+                {
+                    title: "Perfect Peel",
+                    folder: "perfect-peel",
+                    stars: 4.5,
+                    rates: 5000,
+                    downloads: 500000,
+                    appstore: "https://apps.apple.com/us/app/perfect-peel/id1480626969",
+                    googleplay: "",
+                },
+                {
+                    title: "Shootz",
+                    folder: "shootz",
+                    stars: 4.5,
+                    rates: 100,
+                    downloads: 10000,
+                    appstore: "https://apps.apple.com/us/app/shootz/id1427965808",
+                    googleplay: "",
+                },
+                {
+                    title: "Traffic Rush!",
+                    folder: "traffic-rush",
+                    stars: 4.5,
+                    rates: 100,
+                    downloads: 10000,
+                    appstore: "https://apps.apple.com/us/app/traffic-rush/id1470583908",
+                    googleplay: "",
+                },
+                {
+                    title: "Car Race 3D",
+                    folder: "car-race-3d",
+                    stars: 0,
+                    rates: 0,
+                    downloads: 0,
+                    appstore: "https://apps.apple.com/us/app/car-race-3d/id1460662970",
+                    googleplay: "",
+                },
+                {
+                    title: "Flood.io",
+                    folder: "floodio",
+                    stars: 0,
+                    rates: 0,
+                    downloads: 0,
+                    appstore: "https://apps.apple.com/us/app/flood-io/id1472330762",
+                    googleplay: "",
+                },
+                {
+                    title: "Fill The Floor",
+                    folder: "fill-the-floor",
+                    stars: 0,
+                    rates: 0,
+                    downloads: 0,
+                    appstore: "https://apps.apple.com/us/app/fill-the-floor/id1468458184",
                     googleplay: "",
                 }
             ]
@@ -85,13 +152,17 @@ function applyData() {
         var groupProjectsDom = $(groupDom).find('.project-grid');
         groupProjectsDom.html("");
 
+        var folderPath = "projects/";
+
         for (var projectIndex in group.projects) {
 
             var project = group.projects[projectIndex];
             var projectDom = projectPrefab.clone();
             projectDom.removeAttr("id");
 
-            $(projectDom).find('.icon').attr("src", project.icon);
+            var projectFolder = folderPath + project.folder + "/";
+
+            $(projectDom).find('.icon').attr("src", projectFolder + "icon.png");
             $(projectDom).find('.title').html(project.title);
 
             var ratingsDom = $(projectDom).find('.ratings');
@@ -108,10 +179,10 @@ function applyData() {
 
             var screenshotsDom = $(projectDom).find('.screenshots');
             screenshotsDom.html("");
-            for (var ssIndex in project.screenshots) {
-                var ssUrl = project.screenshots[ssIndex];
-                screenshotsDom.append($(`<div class="screenshot-cell"><img class="screenshot" loading="lazy" src="${ssUrl}" /></div>`));
-            }
+            [1, 2, 3].forEach(ssNumber => {
+                var ssPath = projectFolder + "ss" + ssNumber + ".png";
+                screenshotsDom.append($(`<div class="screenshot-cell"><img class="screenshot" loading="lazy" src="${ssPath}" /></div>`));
+            });
 
             ["appstore", "googleplay"].forEach(store => {
                 var storeLink = project[store];
@@ -131,3 +202,17 @@ function applyData() {
 }
 
 applyData();
+
+$(document).ready(function () {
+
+    $('.project').waypoint(function () {
+
+        $(this.element).css({
+            animation: "animate-project 0.5s",
+            "animation-fill-mode": "both",
+        });
+
+    }, { offset: 'bottom-in-view' });
+
+
+});
