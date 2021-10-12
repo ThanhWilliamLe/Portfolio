@@ -46,11 +46,20 @@
             name: "Company",
             projects: [
                 {
+                    title: "Lumber-inc",
+                    folder: "idle-lumber",
+                    stars: 4.3,
+                    rates: 90000,
+                    downloads: 5000000,
+                    appstore: "https://apps.apple.com/us/app/lumbermill-wood-craft-tycoon/id1552153525",
+                    googleplay: "https://play.google.com/store/apps/details?id=com.lumber.inc",
+                },
+                {
                     title: "Idle Success",
                     folder: "idle-success",
                     stars: 4.8,
                     rates: 40000,
-                    downloads: 1000000,
+                    downloads: 5000000,
                     appstore: "https://apps.apple.com/us/app/idle-success/id1512112169",
                     googleplay: "https://play.google.com/store/apps/details?id=com.idle.success&hl=en_US",
                 },
