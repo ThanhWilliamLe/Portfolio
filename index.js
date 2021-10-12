@@ -46,7 +46,7 @@
             name: "Company",
             projects: [
                 {
-                    title: "Lumber-inc",
+                    title: "Lumber Inc.",
                     folder: "idle-lumber",
                     stars: 4.3,
                     rates: 90000,
